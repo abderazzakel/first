@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fancy Form</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #545252, #000000);
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      color: #ff0000;
+      text-shadow: 2px 2px 4px black;
+      margin-top: 20px;
+    }
+
+   img {
+      display: block;
+      margin: 30px auto 10px;
+      width: 200px;
+      border-radius: 20px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 15px #fff;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      background-color: #fff;
+      color: #333;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 15px;
+      top: 12px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #666;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #fff;
+      color: red;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: rgb(24, 52, 155);
+      color: rgb(0, 0, 0);
+    }
+
+    hr {
+      margin: 30px 0;
+      border: none;
+      height: 2px;
+      background-color: #fff;
+    }
+
+    .success-message {
+      text-align: center;
+      color: lime;
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <img src="c:\Users\erazz\Pictures\WhatsApp Image 2025-08-27 at 17.59.49_f28881be.jpg" alt="HTML logo" />
+  <h1>Hello en Websites</h1>
+  <hr>
+
+  <div class="form-container">
+    <form id="myForm">
+      <label for="name">Enter your name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="password">Enter your password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" name="password" required />
+        <button type="button" class="toggle-password" onclick="togglePassword()">👁</button>
+      </div>
+
+      <label for="email">Enter your email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Enter your phone number</label>
+      <input type="tel" id="phone" name="phone" />
+
+      <label for="address">Enter your address</label>
+      <input type="text" id="address" name="address" />
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <div class="success-message" id="successMessage">✔️ Form submitted successfully!</div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordField = document.getElementById('password');
+      passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+    }
+
+    document.getElementById('myForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('successMessage').style.display = 'block';
+      setTimeout(() => {
+        window.location.href = 'htmlfvds.html';
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>

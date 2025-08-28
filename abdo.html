@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zoom One Image Only</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .container img {
+      width: 150px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid  #800080;
+      overflow: hidden;
+      z-index: 1000;
+    }
+    .container img {
+      box-shadow: 0 0 10px  #800080;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .container img:hover {
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 25px  #800080;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="c:\Users\erazz\Pictures\WhatsApp Image 2025-08-27 at 17.50.30_1fa69c61.jpg " alt="Image 1" onclick="showImage(this.src)" />
+    <img src="c:\Users\erazz\Pictures\WhatsApp Image 2025-08-27 at 17.50.30_b2a9d358.jpg" alt="Image 2" onclick="showImage(this.src)" />
+    <img src="c:\Users\erazz\Pictures\WhatsApp Image 2025-08-27 at 17.50.30_3ecc6067.jpg" alt="Image 3" onclick="showImage(this.src)" />       
+    <img src="c:\Users\erazz\Pictures\WhatsApp Image 2025-08-27 at 17.50.30_7bdbe54f.jpg" alt="Image 4" onclick="showImage(this.src)" />
+    <img src="c:\Users\erazz\Pictures\WhatsApp Image 2025-08-27 at 17.54.54_8bfc6e55.jpg" alt="Image 5" onclick="showImage(this.src)" />
+    <img src="c:\Users\erazz\Pictures\WhatsApp Image 2025-08-27 at 17.59.49_f28881be.jpg" alt="Image 6" onclick="showImage(this.src)" />
+    <img src="c:\Users\erazz\Pictures\WhatsApp Image 2025-08-27 at 18.07.22_1d68b90b.jpg" alt="Image 7" onclick="showImage(this.src)" />
+    <img src="c:\Users\erazz\Pictures\WhatsApp Image 2025-08-27 at 18.07.22_902ab39a.jpg" alt="Image 8" onclick="showImage(this.src)" />
+    <img src="c:\Users\erazz\Pictures\WhatsApp Image 2025-08-27 at 19.30.18_d248b637.jpg" alt="Image 9" onclick="showImage(this.src)" />
+  </div>
+
+  <div class="overlay" id="overlay" onclick="hideImage()">
+    <img id="overlay-img" src="" alt="enlarged image">
+  </div>
+
+  <script>
+    function showImage(src) {
+      document.getElementById('overlay-img').src = src;
+      document.getElementById('overlay').style.display = 'flex';
+    }
+
+    function hideImage() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
